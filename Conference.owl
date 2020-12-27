@@ -1,0 +1,695 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://onto.conference.org"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://onto.conference.org">
+    <Prefix name="" IRI="http://onto.conference.org"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <Literal>Ontology about a online conference tracking software.</Literal>
+    </Annotation>
+    <Declaration>
+        <Class IRI="#Conference"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Device"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Local_Software"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Microphone"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Provider"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Text_Chat"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Text_Message"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#User"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Webcam"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Access"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Connects_to"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Creates"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#IncludesChat"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#IncludesMicro"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#IncludesWebcam"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Made_Of"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Of_Provider"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Possess"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Powered_by"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Send_Messages"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasFriend"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasSoftware"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Conference_Date"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Conference_ID"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Conference_Length"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Conference_Link"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Conference_Rating"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Conference_creator_ID"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Device_Id"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Microphone_ID"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Microphone_Quality"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Microphone_Status"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Provider_ID"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Provider_Name"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Text"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Text_Time"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#User_ID"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#User_Name"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#User_Status"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Webcam_ID"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Webcam_Quality"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Webcam_Status"/>
+    </Declaration>
+    <DisjointClasses>
+        <Class IRI="#Conference"/>
+        <Class IRI="#Device"/>
+        <Class IRI="#Local_Software"/>
+        <Class IRI="#Microphone"/>
+        <Class IRI="#User"/>
+        <Class IRI="#Webcam"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Conference"/>
+        <Class IRI="#Provider"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Conference"/>
+        <Class IRI="#Text_Chat"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Conference"/>
+        <Class IRI="#Text_Message"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Device"/>
+        <Class IRI="#Provider"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Device"/>
+        <Class IRI="#Text_Chat"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Device"/>
+        <Class IRI="#Text_Message"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Local_Software"/>
+        <Class IRI="#Provider"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Local_Software"/>
+        <Class IRI="#Text_Chat"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Local_Software"/>
+        <Class IRI="#Text_Message"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Microphone"/>
+        <Class IRI="#Provider"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Microphone"/>
+        <Class IRI="#Text_Chat"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Microphone"/>
+        <Class IRI="#Text_Message"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Provider"/>
+        <Class IRI="#Text_Chat"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Provider"/>
+        <Class IRI="#Text_Message"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Provider"/>
+        <Class IRI="#User"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Provider"/>
+        <Class IRI="#Webcam"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Text_Chat"/>
+        <Class IRI="#Text_Message"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Text_Chat"/>
+        <Class IRI="#User"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Text_Chat"/>
+        <Class IRI="#Webcam"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Text_Message"/>
+        <Class IRI="#User"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Text_Message"/>
+        <Class IRI="#Webcam"/>
+    </DisjointClasses>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#IncludesChat"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#Of_Provider"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#Powered_by"/>
+    </FunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#Creates"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#IncludesChat"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#IncludesMicro"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#IncludesWebcam"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#Made_Of"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#Possess"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#Send_Messages"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#hasSoftware"/>
+    </InverseFunctionalObjectProperty>
+    <SymmetricObjectProperty>
+        <ObjectProperty IRI="#hasFriend"/>
+    </SymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#Access"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#Connects_to"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#Creates"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#IncludesChat"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#IncludesMicro"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#IncludesWebcam"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#Made_Of"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#Of_Provider"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#Possess"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#Powered_by"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#Send_Messages"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#hasSoftware"/>
+    </AsymmetricObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#Access"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#Connects_to"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#Creates"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#IncludesChat"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#IncludesMicro"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#IncludesWebcam"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#Made_Of"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#Of_Provider"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#Possess"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#Powered_by"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#Send_Messages"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#hasSoftware"/>
+    </IrreflexiveObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Access"/>
+        <Class IRI="#Local_Software"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Connects_to"/>
+        <Class IRI="#User"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Creates"/>
+        <Class IRI="#Local_Software"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#IncludesChat"/>
+        <Class IRI="#Conference"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#IncludesMicro"/>
+        <Class IRI="#Device"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#IncludesWebcam"/>
+        <Class IRI="#Device"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Made_Of"/>
+        <Class IRI="#Text_Chat"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Of_Provider"/>
+        <Class IRI="#Local_Software"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Possess"/>
+        <Class IRI="#User"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Powered_by"/>
+        <Class IRI="#Conference"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Send_Messages"/>
+        <Class IRI="#Local_Software"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasFriend"/>
+        <Class IRI="#User"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasSoftware"/>
+        <Class IRI="#Device"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Access"/>
+        <Class IRI="#Conference"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Connects_to"/>
+        <Class IRI="#Conference"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Creates"/>
+        <Class IRI="#Conference"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#IncludesChat"/>
+        <Class IRI="#Text_Chat"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#IncludesMicro"/>
+        <Class IRI="#Microphone"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#IncludesWebcam"/>
+        <Class IRI="#Webcam"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Made_Of"/>
+        <Class IRI="#Text_Message"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Of_Provider"/>
+        <Class IRI="#Provider"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Possess"/>
+        <Class IRI="#Device"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Powered_by"/>
+        <Class IRI="#Provider"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Send_Messages"/>
+        <Class IRI="#Text_Message"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasFriend"/>
+        <Class IRI="#User"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasSoftware"/>
+        <Class IRI="#Local_Software"/>
+    </ObjectPropertyRange>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#Conference_Date"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#Conference_ID"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#Conference_Length"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#Conference_Link"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#Conference_Rating"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#Conference_creator_ID"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#Device_Id"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#Microphone_ID"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#Microphone_Quality"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#Microphone_Status"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#Provider_ID"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#Provider_Name"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#Text"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#User_ID"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#User_Name"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#User_Status"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#Webcam_ID"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#Webcam_Quality"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#Webcam_Status"/>
+    </FunctionalDataProperty>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Conference_Date"/>
+        <Class IRI="#Conference"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Conference_ID"/>
+        <Class IRI="#Conference"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Conference_Length"/>
+        <Class IRI="#Conference"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Conference_Link"/>
+        <Class IRI="#Conference"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Conference_Rating"/>
+        <Class IRI="#Conference"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Conference_creator_ID"/>
+        <Class IRI="#Conference"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Device_Id"/>
+        <Class IRI="#Device"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Microphone_ID"/>
+        <Class IRI="#Microphone"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Microphone_Quality"/>
+        <Class IRI="#Microphone"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Microphone_Status"/>
+        <Class IRI="#Microphone"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Provider_ID"/>
+        <Class IRI="#Provider"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Provider_Name"/>
+        <Class IRI="#Provider"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Text"/>
+        <Class IRI="#Text_Message"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Text_Time"/>
+        <Class IRI="#Text_Message"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#User_ID"/>
+        <Class IRI="#User"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#User_Name"/>
+        <Class IRI="#User"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#User_Status"/>
+        <Class IRI="#User"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Webcam_ID"/>
+        <Class IRI="#Webcam"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Webcam_Quality"/>
+        <Class IRI="#Webcam"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Webcam_Status"/>
+        <Class IRI="#Webcam"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#Conference_Date"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Conference_ID"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Conference_Length"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Conference_Link"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Conference_Rating"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Conference_creator_ID"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Device_Id"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Microphone_ID"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Microphone_Quality"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Microphone_Status"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Provider_ID"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Provider_Name"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Text"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Text_Time"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#User_ID"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#User_Name"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#User_Status"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Webcam_ID"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Webcam_Quality"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Webcam_Status"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Creates</IRI>
+        <Literal>Locally installed software creates a Video Call online</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Microphone_Status</IRI>
+        <Literal>Activated or not</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#User_Status</IRI>
+        <Literal>Active in a video call or not</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Webcam_Status</IRI>
+        <Literal>Activated or not</Literal>
+    </AnnotationAssertion>
+    <DatatypeDefinition>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DatatypeDefinition>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

@@ -1,0 +1,315 @@
+# This is the vocabulary for creating R2RML
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+# This is the vocabulary of our ontology
+@prefix conf: <http://onto.conference.org#> .
+
+
+<#Users>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "User" ] ;
+    rr:subjectMap [
+        rr:template "http://data.conference.org/Users/userId={Id}" ;
+        rr:class conf:User ;
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate conf:User_Name ;
+        rr:objectMap [ rr:column "Username" ] ;
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate conf:User_ID ;
+        rr:objectMap [ rr:column "Id" ] ;
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate conf:User_Status ;
+        rr:objectMap [ rr:column "Online Status" ] ;
+    ] ;
+    .
+
+
+<#hasFriend>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "HasFriendRel" ] ;
+    rr:subjectMap [
+        rr:template "http://data.conference.org/Users/userId={PersonId1}" ;
+        rr:class conf:User ;
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate conf:hasFriend ;
+        rr:objectMap [ rr:template "http://data.conference.org/Users/userId={PersonId2}" ] ;
+    ] ;
+    .
+
+<#Device>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "Device" ] ;
+    rr:subjectMap [
+        rr:template "http://data.conference.org/Devices/deviceId={Id}" ;
+        rr:class conf:Device ;
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate conf:Device_Id ;
+        rr:objectMap [ rr:column "Id" ] ;
+    ] ;
+    .
+
+<#Possess>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "Device" ] ;
+    rr:subjectMap [
+        rr:template "http://data.conference.org/Users/userId={userId}" ;
+        rr:class conf:User ;
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate conf:Possess ;
+        rr:objectMap [ rr:template "http://data.conference.org/Devices/deviceId={Id}" ] ;
+    ] ;
+    .
+
+<#Microphone>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "Microphone" ] ;
+    rr:subjectMap [
+        rr:template "http://data.conference.org/Microphones/micId={Microphone Number}" ;
+        rr:class conf:Microphone ;
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate conf:Microphone_ID ;
+        rr:objectMap [ rr:column "Microphone Number" ] ;
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate conf:Microphone_Status ;
+        rr:objectMap [ rr:column "Microphone Status" ] ;
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate conf:Microphone_Quality ;
+        rr:objectMap [ rr:column "Quality" ] ;
+    ] ;
+    .
+
+<#Webcam>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "Webcam" ] ;
+    rr:subjectMap [
+        rr:template "http://data.conference.org/Webcams/webcamId={Webcam Number}" ;
+        rr:class conf:Webcam ;
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate conf:Webcam_ID ;
+        rr:objectMap [ rr:column "Webcam Number" ] ;
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate conf:Webcam_Quality ;
+        rr:objectMap [ rr:column "Quality" ] ;
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate conf:Webcam_Status ;
+        rr:objectMap [ rr:column "Webcam Status" ] ;
+    ] ;
+    .
+
+<#IncludesMicro>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "Microphone" ] ;
+    rr:subjectMap [
+        rr:template "http://data.conference.org/Devices/deviceId={deviceId}" ;
+        rr:class conf:Device ;
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate conf:IncludesMicro ;
+        rr:objectMap [ rr:template "http://data.conference.org/Microphones/micId={Microphone Number}" ] ;
+    ] ;
+    .
+
+<#IncludesWebcam>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "Webcam" ] ;
+    rr:subjectMap [
+        rr:template "http://data.conference.org/Devices/deviceId={deviceId}" ;
+        rr:class conf:Device ;
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate conf:IncludesMicro ;
+        rr:objectMap [ rr:template "http://data.conference.org/Microphones/micId={Webcam Number}" ] ;
+    ] ;
+    .
+
+<#Provider>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "Provider" ] ;
+    rr:subjectMap [
+        rr:template "http://data.conference.org/Providers/providerId={Id}" ;
+        rr:class conf:Provider ;
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate conf:Provider_ID ;
+        rr:objectMap [ rr:column "Id" ] ;
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate conf:Provider_Name ;
+        rr:objectMap [ rr:column "Name" ] ;
+    ] ;
+    .
+
+<#TextMessage>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "TextMessage" ] ;
+    rr:subjectMap [
+        rr:template "http://data.conference.org/TextMessages/Id={Id}" ;
+        rr:class conf:Text_Message ;
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate conf:Text_Time ;
+        rr:objectMap [ rr:column "Time" ] ;
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate conf:Text ;
+        rr:objectMap [ rr:column "Text" ] ;
+    ] ;
+    .
+
+<#LocalSoftware>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "LocalSoftware" ] ;
+    rr:subjectMap [
+        rr:template "http://data.conference.org/LocalSoftware/Id={Id}" ;
+        rr:class conf:Local_Software ;
+    ] ;
+
+    
+    rr:predicateObjectMap [
+        rr:predicate conf:Access ;
+        rr:objectMap [ rr:template "http://data.conference.org/Conferences/Id={conferenceIdAccess}" ] ;
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate conf:Of_Provider ;
+        rr:objectMap [ rr:template "http://data.conference.org/Providers/providerId={providerId}" ] ;
+    ] ;
+
+    .
+
+<#hasSoftware>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "LocalSoftware" ] ;
+    rr:subjectMap [
+        rr:template "http://data.conference.org/Devices/deviceId={deviceId}" ;
+        rr:class conf:Device ;
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate conf:hasSoftware ;
+        rr:objectMap [ rr:template "http://data.conference.org/LocalSoftwares/Id={Id}" ] ;
+    ] ;
+    .
+
+
+<#SendsMessage>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "TextMessage" ] ;
+    rr:subjectMap [
+        rr:template "http://data.conference.org/LocalSoftware/Id={localSoftwareIdSender}" ;
+        rr:class conf:Local_Software ;
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate conf:Send_Messages ;
+        rr:objectMap [ rr:template "http://data.conference.org/TextMessages/Id={Id}" ] ;
+    ] ;
+    .
+
+
+<#TextChat>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "TextChat" ] ;
+    rr:subjectMap [
+        rr:template "http://data.conference.org/TextChat/chatId={Id}" ;
+        rr:class conf:Text_Chat ;
+    ] ;
+    .
+
+
+<#Conference>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "Conference" ] ;
+    rr:subjectMap [
+        rr:template "http://data.conference.org/Conferences/Id={Id}" ;
+        rr:class conf:Conference ;
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate conf:Conference_ID ;
+        rr:objectMap [ rr:column "Id" ] ;
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate conf:Conference_Rating ;
+        rr:objectMap [ rr:column "Rating" ] ;
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate conf:Conference_Length ;
+        rr:objectMap [ rr:column "Length" ] ;
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate conf:Conference_creator_ID ;
+        rr:objectMap [ rr:column "localSoftwareIdCreator" ] ;
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate conf:Conference_Date ;
+        rr:objectMap [ rr:column "Date" ] ;
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate conf:Conference_Link ;
+        rr:objectMap [ rr:column "Link" ] ;
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate conf:IncludesChat ;
+        rr:objectMap [ rr:template "http://data.conference.org/TextChat/chatId={textChatId}" ] ;
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate conf:Powered_by ;
+        rr:objectMap [ rr:template "http://data.conference.org/Providers/providerId={providerId}" ] ;
+    ] ;
+    .
+
+
+<#MadeOf>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "TextMessage" ] ;
+    rr:subjectMap [
+        rr:template "http://data.conference.org/TextChat/chatId={textChatId}" ;
+        rr:class conf:Text_Chat ;
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate conf:Made_Of ;
+        rr:objectMap [ rr:template "http://data.conference.org/TextMessages/Id={Id}" ] ;
+    ] ;
+    .
+
+<#CreatesConference>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "Conference" ] ;
+    rr:subjectMap [
+        rr:template "http://data.conference.org/LocalSoftware/Id={localSoftwareIdCreator}" ;
+        rr:class conf:Local_Software ;
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate conf:Creates ;
+        rr:objectMap [ rr:template "http://data.conference.org/Conferences/Id={Id}" ] ;
+    ] ;
+
+    .
+
+
+

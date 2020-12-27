@@ -1,0 +1,109 @@
+BEGIN TRANSACTION;
+CREATE TABLE IF NOT EXISTS "User" (
+	"Online Status"	NUMERIC NOT NULL,
+	"Username"	TEXT NOT NULL,
+	"Id"	INTEGER NOT NULL,
+	"Email"	TEXT NOT NULL,
+	PRIMARY KEY("Id")
+);
+CREATE TABLE IF NOT EXISTS "HasFriendRel" (
+	"HasRelatId"	INTEGER NOT NULL,
+	"PersonId1"	INTEGER NOT NULL,
+	"PersonId2"	INTEGER NOT NULL,
+	PRIMARY KEY("HasRelatId")
+);
+CREATE TABLE IF NOT EXISTS "Device" (
+	"Id"	INTEGER NOT NULL,
+	"userId"	INTEGER NOT NULL,
+	PRIMARY KEY("Id")
+);
+CREATE TABLE IF NOT EXISTS "Microphone" (
+	"Quality"	INTEGER NOT NULL,
+	"Microphone Number"	INTEGER NOT NULL,
+	"Microphone Status"	NUMERIC NOT NULL,
+	"deviceId"	INTEGER NOT NULL,
+	PRIMARY KEY("Microphone Number")
+);
+CREATE TABLE IF NOT EXISTS "Webcam" (
+	"Quality"	INTEGER NOT NULL,
+	"Webcam Number"	INTEGER NOT NULL,
+	"Webcam Status"	NUMERIC NOT NULL,
+	"deviceId"	INTEGER NOT NULL,
+	PRIMARY KEY("Webcam Number")
+);
+CREATE TABLE IF NOT EXISTS "Provider" (
+	"Id"	INTEGER NOT NULL,
+	"Name"	TEXT NOT NULL,
+	PRIMARY KEY("Id")
+);
+CREATE TABLE IF NOT EXISTS "Conference" (
+	"Date"	TEXT NOT NULL,
+	"Link"	TEXT NOT NULL,
+	"Id"	INTEGER NOT NULL,
+	"Length"	INTEGER NOT NULL,
+	"Rating"	INTEGER NOT NULL,
+	"localSoftwareIdCreator"	INTEGER NOT NULL,
+	"providerId"	INTEGER NOT NULL,
+	"textChatId"	INTEGER NOT NULL,
+	PRIMARY KEY("Id")
+);
+CREATE TABLE IF NOT EXISTS "TextChat" (
+	"Id"	INTEGER NOT NULL,
+	"conferenceId"	INTEGER NOT NULL,
+	PRIMARY KEY("Id")
+);
+CREATE TABLE IF NOT EXISTS "LocalSoftware" (
+	"Id"	INTEGER NOT NULL,
+	"deviceId"	INTEGER NOT NULL,
+	"providerId"	INTEGER NOT NULL,
+	"conferenceIdAccess"	INTEGER,
+	PRIMARY KEY("Id")
+);
+CREATE TABLE IF NOT EXISTS "TextMessage" (
+	"Time"	TEXT NOT NULL,
+	"Text"	TEXT NOT NULL,
+	"localSoftwareIdSender"	INTEGER NOT NULL,
+	"textChatId"	INTEGER NOT NULL,
+	"Id"	INTEGER NOT NULL,
+	PRIMARY KEY("Id")
+);
+INSERT INTO "User" VALUES (1,'Dany',111,'dani.aziz@vub.be');
+INSERT INTO "User" VALUES (0,'Sandro',112,'sandro@vub.be');
+INSERT INTO "User" VALUES (1,'Mateo',113,'mateo@vub.be');
+INSERT INTO "HasFriendRel" VALUES (41,111,222);
+INSERT INTO "HasFriendRel" VALUES (42,222,111);
+INSERT INTO "HasFriendRel" VALUES (43,111,333);
+INSERT INTO "HasFriendRel" VALUES (44,333,111);
+INSERT INTO "HasFriendRel" VALUES (45,222,333);
+INSERT INTO "HasFriendRel" VALUES (46,333,222);
+INSERT INTO "Device" VALUES (31,111);
+INSERT INTO "Device" VALUES (32,111);
+INSERT INTO "Device" VALUES (33,222);
+INSERT INTO "Device" VALUES (34,333);
+INSERT INTO "Device" VALUES (35,333);
+INSERT INTO "Device" VALUES (36,333);
+INSERT INTO "Microphone" VALUES (4,61,0,31);
+INSERT INTO "Microphone" VALUES (5,62,1,31);
+INSERT INTO "Microphone" VALUES (3,63,0,32);
+INSERT INTO "Microphone" VALUES (5,64,1,33);
+INSERT INTO "Webcam" VALUES (2,1,1,31);
+INSERT INTO "Webcam" VALUES (4,2,1,32);
+INSERT INTO "Webcam" VALUES (5,3,0,33);
+INSERT INTO "Provider" VALUES (71,'Discord');
+INSERT INTO "Provider" VALUES (72,'Teams');
+INSERT INTO "Provider" VALUES (73,'BBB');
+INSERT INTO "Provider" VALUES (74,'Zoom');
+INSERT INTO "Conference" VALUES ('25/12/20','discord111',21,60,3,51,71,81);
+INSERT INTO "Conference" VALUES ('24/12/20','teams556',22,30,4,52,72,82);
+INSERT INTO "TextChat" VALUES (81,21);
+INSERT INTO "TextChat" VALUES (82,22);
+INSERT INTO "LocalSoftware" VALUES (51,31,71,21);
+INSERT INTO "LocalSoftware" VALUES (52,31,72,NULL);
+INSERT INTO "LocalSoftware" VALUES (53,32,72,22);
+INSERT INTO "LocalSoftware" VALUES (54,33,72,22);
+INSERT INTO "TextMessage" VALUES ('12:25','Good Afternoon!',52,82,91);
+INSERT INTO "TextMessage" VALUES ('12:26','Hello',53,82,92);
+INSERT INTO "TextMessage" VALUES ('12:28','So have far have you gotten with your task?',52,82,93);
+INSERT INTO "TextMessage" VALUES ('12:30','Im pretty much done, hbu?',53,82,94);
+INSERT INTO "TextMessage" VALUES ('13:00','TESTSTST',53,81,95);
+COMMIT;
