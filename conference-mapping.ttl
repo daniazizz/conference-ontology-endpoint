@@ -179,7 +179,7 @@
     a rr:TriplesMap ;
     rr:logicalTable [ rr:tableName "LocalSoftware" ] ;
     rr:subjectMap [
-        rr:template "http://data.conference.org/LocalSoftware/Id={Id}" ;
+        rr:template "http://data.conference.org/LocalSoftwares/Id={Id}" ;
         rr:class conf:Local_Software ;
     ] ;
 
@@ -214,7 +214,7 @@
     a rr:TriplesMap ;
     rr:logicalTable [ rr:tableName "TextMessage" ] ;
     rr:subjectMap [
-        rr:template "http://data.conference.org/LocalSoftware/Id={localSoftwareIdSender}" ;
+        rr:template "http://data.conference.org/LocalSoftwares/Id={localSoftwareIdSender}" ;
         rr:class conf:Local_Software ;
     ] ;
     rr:predicateObjectMap [
@@ -301,7 +301,7 @@
     a rr:TriplesMap ;
     rr:logicalTable [ rr:tableName "Conference" ] ;
     rr:subjectMap [
-        rr:template "http://data.conference.org/LocalSoftware/Id={localSoftwareIdCreator}" ;
+        rr:template "http://data.conference.org/LocalSoftwares/Id={localSoftwareIdCreator}" ;
         rr:class conf:Local_Software ;
     ] ;
     rr:predicateObjectMap [
